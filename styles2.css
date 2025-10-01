@@ -1,0 +1,144 @@
+/* ==================================== */
+/* 1. Base Styles and Font Import */
+/* ==================================== */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap");
+
+body {
+    padding-top: 56px;
+    font-family: "JetBrains Mono", monospace;
+    background: #282c34 !important;
+    color: #e4bb68;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el resto de las secciones */
+#sobre-mi,
+#habilidades {
+    background-color: white !important;
+    color: #282c34 !important;
+}
+
+/* ==================================== */
+/* 2. ESTILOS DE LA ANIMACIÓN DE CÓDIGO (HERO) */
+/* ==================================== */
+
+#inicio {
+    background: #282c34 !important;
+    padding-bottom: 100px;
+}
+
+/* Contenedor Flex para la Animación */
+.code-animation-container {
+    display: flex;
+    /* QUITAMOS justify-content: center para alinearlo a la izquierda de la columna */
+    align-items: center;
+    /* AUMENTO DE TAMAÑO SOLICITADO (24px) */
+    font-size: 24px;
+    white-space: nowrap;
+    /* IMPORTANTE: Agregamos un margen inferior para separar la animación del párrafo */
+    margin-bottom: 3rem !important;
+}
+
+.code-animation-container h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.code-line {
+    line-height: 1.2;
+    height: 1.2em;
+}
+
+/* Contenedor del texto rotatorio */
+.string {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* overflow: hidden; Aseguramos que solo se vea 1 línea */
+    height: 1.2em;
+    animation: move 8s infinite;
+    padding: 0 0.5em;
+}
+
+.greeting {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/* Colores de las cadenas de texto */
+.en {
+    color: #fa8231;
+}
+.es {
+    color: #c678dd;
+}
+.de {
+    color: #c678dd;
+}
+.it {
+    color: #a9b0bd;
+}
+
+/* Efecto de Cierre: Comillas de cierre (");) */
+.closure {
+    position: relative;
+    line-height: 1.2;
+}
+
+/* Máscaras (se mantienen para evitar romper el código, pero el overflow: hidden en .string es el que realmente funciona) */
+.closure::after {
+    content: "";
+    position: absolute;
+    height: 4em;
+    width: 12em;
+    background: #282c34;
+    transform: translate(-13.5em, -4em);
+}
+
+.closure::before {
+    content: "";
+    position: absolute;
+    height: 2em;
+    width: 12em;
+    background: #282c34;
+    transform: translate(-12em, 1em);
+}
+
+/* ANIMACIONES (MODIFICADO PARA 2 LÍNEAS) */
+
+@keyframes move {
+    /* El movimiento es para 2 líneas, 8s de duración total (4s por línea) */
+
+    /* 0% - 45% = Línea 1 visible */
+    0%,
+    45% {
+        transform: translatey(0);
+    } 
+
+    /* 50% - 95% = Línea 2 visible */
+    50%,
+    95% {
+        transform: translatey(calc(-1.2em * 1)); /* Sube 1 posición */
+    } 
+
+    /* 100% = Vuelve a la Línea 1 instantáneamente */
+    100% {
+        transform: translatey(0);
+    }
+}
+
+/* ==================================== */
+/* 3. Media Queries (Ajustes de Responsividad) */
+/* ==================================== */
+@media (max-width: 768px) {
+    .code-animation-container {
+        font-size: 21px; /* Reducir tamaño en móviles */
+    }
+}

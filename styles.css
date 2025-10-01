@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap");
+
+body {
+    padding-top: 56px;
+    font-family: "JetBrains Mono", monospace;
+    background: #282c34 !important;
+    color: #e4bb68;
+    margin: 0;
+    padding: 0;
+}
+
+#sobre-mi,
+#habilidades {
+    background-color: white !important;
+    color: #282c34 !important;
+}
+
+#inicio {
+    background: #282c34 !important;
+    padding-bottom: 100px;
+}
+
+.code-animation-container {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    white-space: nowrap;
+    margin-bottom: 3rem !important;
+}
+
+.code-animation-container h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.code-line {
+    line-height: 1.2;
+    height: 1.2em;
+}
+
+.string {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 1.2em;
+    animation: move 8s infinite;
+    padding: 0 0.5em;
+}
+
+.greeting {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.en {
+    color: #fa8231;
+}
+.es {
+    color: #c678dd;
+}
+.de {
+    color: #c678dd;
+}
+.it {
+    color: #a9b0bd;
+}
+
+.closure {
+    position: relative;
+    line-height: 1.2;
+}
+
+.closure::after {
+    content: "";
+    position: absolute;
+    height: 4em;
+    width: 12em;
+    background: #282c34;
+    transform: translate(-13.5em, -4em);
+}
+
+.closure::before {
+    content: "";
+    position: absolute;
+    height: 2em;
+    width: 12em;
+    background: #282c34;
+    transform: translate(-12em, 1em);
+}
+
+@keyframes move {
+    0%,
+    45% {
+        transform: translatey(0);
+    }
+
+    50%,
+    95% {
+        transform: translatey(calc(-1.2em * 1));
+    }
+
+    100% {
+        transform: translatey(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .code-animation-container {
+        font-size: 21px;
+    }
+}
+
+
