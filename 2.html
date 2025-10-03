@@ -6,7 +6,202 @@
     <title>Katherine Aranguren - Desarrollador Frontend</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles2.css"> 
+    
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap");
+
+        body {
+            padding-top: 56px;
+            font-family: "JetBrains Mono", monospace;
+            background: #282c34 !important;
+            color: #e4bb68;
+            margin: 0;
+            padding: 0;
+        }
+
+        #sobre-mi,
+        #habilidades {
+            background-color: white !important;
+            color: #282c34 !important;
+        }
+
+        #inicio {
+            background: #282c34 !important;
+            padding-bottom: 100px;
+        }
+
+        /* ------------------------------------------- */
+        /* 2. ESTILOS DE LA ANIMACIÓN DE CÓDIGO (HERO) */
+        /* ------------------------------------------- */
+
+        /* CONTENEDOR PRINCIPAL: Ahora se comporta como un bloque apilado */
+        .code-animation-container {
+            display: block; 
+            font-size: 24px;
+            margin-bottom: 3rem !important;
+        }
+
+        .code-animation-container h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 1em;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .code-line {
+            line-height: 1.2;
+            height: 1.2em;
+        }
+
+        /* CONTENEDOR DE ROTACIÓN: Apilado verticalmente */
+        .string {
+            display: flex;
+            flex-direction: column;
+            text-align: left; 
+            height: 1.2em;
+            overflow: hidden; /* EVITA EL DESBORDAMIENTO */
+            animation: move 8s infinite;
+            padding: 0; /* ELIMINA EL PADDING HORIZONTAL */
+        }
+
+        .greeting {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+            white-space: nowrap;
+            text-align: left; 
+        }
+
+        .en {
+            color: #fa8231;
+        }
+        .es {
+            color: #c678dd;
+        }
+        .de {
+            color: #c678dd;
+        }
+        .it {
+            color: #a9b0bd;
+        }
+
+        .closure {
+            position: relative;
+            line-height: 1.2;
+        }
+
+        /* ELIMINACIÓN DE MÁSCARAS PROBLEMÁTICAS */
+        .closure::after, .closure::before {
+            content: none;
+        }
+
+        @keyframes move {
+            0%,
+            45% {
+                transform: translatey(0);
+            }
+
+            50%,
+            95% {
+                transform: translatey(calc(-1.2em * 1));
+            }
+
+            100% {
+                transform: translatey(0);
+            }
+        }
+
+        /* -------------------------------- */
+        /* 3. ESTILOS DE RESPONSIVIDAD Y FOOTER */
+        /* -------------------------------- */
+
+        @media (max-width: 768px) {
+            .code-animation-container {
+                font-size: 19px;
+                text-align: center; 
+            }
+            /* Centrar todas las líneas de la animación en móvil */
+            .code-line, .closure, .string, .greeting {
+                text-align: center !important; 
+            }
+        }
+        
+        /* FOOTER FIJO (Se mantiene tu estilo) */
+        .fixed-social {
+            position: fixed;
+            bottom: 0;
+            left: 15px; 
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .fixed-social::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 90px; 
+            margin: 0 auto;
+            background-color: #a9b0bd;
+        }
+
+        .social-icon-link {
+            display: block;
+            padding: 8px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-icon-link:hover {
+            transform: translateY(-3px); 
+        }
+
+        .social-icon {
+            width: 20px; 
+            height: 20px;
+            filter: invert(70%) sepia(20%) saturate(600%) hue-rotate(10deg); 
+        }
+
+        .fixed-email {
+            position: fixed;
+            bottom: 0;
+            right: 15px; 
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .fixed-email a {
+            text-decoration: none;
+            color: #a9b0bd;
+            font-size: 0.9em;
+            padding: 15px 0;
+            writing-mode: vertical-rl; 
+            transition: color 0.3s ease-in-out;
+        }
+
+        .fixed-email a:hover {
+            color: #61afef; 
+        }
+
+        .fixed-email::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 90px; 
+            margin: 0 auto;
+            background-color: #a9b0bd;
+        }
+
+        @media (max-width: 992px) {
+            .fixed-social, .fixed-email {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
     
@@ -34,20 +229,26 @@
         <div class="container my-5">
             <div class="row align-items-center">
 
-                <div class="col-md-7 text-start">
+                <div class="col-md-7 text-start text-md-start text-center"> 
+                    
+                    <div class="d-block d-md-none text-center mb-4">
+                        <img src="./img/1a.png" class="img-fluid rounded-circle shadow-lg" style="max-width: 150px; margin: 0 auto;" alt="Foto de Perfil de Katherine Aranguren">
+                    </div>
                     
                     <div class="code-animation-container mb-3">
-                        <h1 class="code-line"><span style="color:#e06c75;">Hello 👋 </span> </span><span style="color:#61afef;">I'm</span> <</h1>
+                        
+                        <h1 class="code-line">
+                            <span style="color:#e06c75;">Hello 👋 </span><span style="color:#61afef;">I'm </span><span style="color:white;">"</span>
+                        </h1>
                         
                         <div class="string">
                             <h1 class="greeting en">Katherine Aranguren</h1>
                             <h1 class="greeting es">Frontend Developer</h1>
-                            <!-- <h1 class="greeting de">Hallo Welt!</h1>
-                            <h1 class="greeting it">Ciao Mondo!</h1> -->
                         </div>
                         
-                        <h1 class="closure">>;</h1>
+                        <h1 class="closure">";</h1>
                     </div>
+
                     <p class="lead mb-4 mt-4" style="font-family: Arial, sans-serif; color: #a9b0bd;">
                         Especialista en desarrollo web robusto y experiencias de usuario impecables.
                     </p>
@@ -62,7 +263,29 @@
         </div>
     </section>
 
+    <div class="fixed-social">
+        <a href="https://github.com/tu_usuario" target="_blank" class="social-icon-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#a9b0bd" class="bi bi-github social-icon" viewBox="0 0 16 16">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+        </a>
+        <a href="https://linkedin.com/in/katherine-aranguren" target="_blank" class="social-icon-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#a9b0bd" class="bi bi-linkedin social-icon" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.002 12.604v-9.456h-2.39V13.75h2.39zm-1.192-10.158a1.57 1.57 0 1 1-3.14 0 1.57 1.57 0 0 1 3.14 0zm7.147 10.158V9.75c0-.986-.197-2.34-.84-2.898-.58-.507-1.528-.797-2.484-.797-1.95 0-2.824 1.34-2.824 3.32v4.375h-2.39V6.75h2.39v1.077c.32-.497.873-1.196 2.167-1.196 2.664 0 4.194 1.748 4.194 5.517v4.524h-2.39z"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="fixed-email">
+        <a href="mailto:karanguren12@outlook.com" target="_blank">karanguren12@outlook.com</a>
+    </div>
+
+    <section id="sobre-mi" style="min-height: 50vh;"><h1>Sobre Mí</h1></section>
+    <section id="proyectos" style="min-height: 50vh;"><h1>Proyectos</h1></section>
+    <section id="habilidades" style="min-height: 50vh;"><h1>Habilidades</h1></section>
+    <section id="contacto" style="min-height: 50vh;"><h1>Contacto</h1></section>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="script.js"></script> 
 </body>
 </html>

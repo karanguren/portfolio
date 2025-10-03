@@ -1,6 +1,3 @@
-/* ==================================== */
-/* 1. Base Styles and Font Import */
-/* ==================================== */
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap");
 
 body {
@@ -12,31 +9,22 @@ body {
     padding: 0;
 }
 
-/* Estilos para el resto de las secciones */
 #sobre-mi,
 #habilidades {
     background-color: white !important;
     color: #282c34 !important;
 }
 
-/* ==================================== */
-/* 2. ESTILOS DE LA ANIMACIÓN DE CÓDIGO (HERO) */
-/* ==================================== */
-
 #inicio {
     background: #282c34 !important;
     padding-bottom: 100px;
 }
 
-/* Contenedor Flex para la Animación */
 .code-animation-container {
     display: flex;
-    /* QUITAMOS justify-content: center para alinearlo a la izquierda de la columna */
     align-items: center;
-    /* AUMENTO DE TAMAÑO SOLICITADO (24px) */
     font-size: 24px;
     white-space: nowrap;
-    /* IMPORTANTE: Agregamos un margen inferior para separar la animación del párrafo */
     margin-bottom: 3rem !important;
 }
 
@@ -53,12 +41,10 @@ body {
     height: 1.2em;
 }
 
-/* Contenedor del texto rotatorio */
 .string {
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* overflow: hidden; Aseguramos que solo se vea 1 línea */
     height: 1.2em;
     animation: move 8s infinite;
     padding: 0 0.5em;
@@ -72,7 +58,6 @@ body {
     white-space: nowrap;
 }
 
-/* Colores de las cadenas de texto */
 .en {
     color: #fa8231;
 }
@@ -86,13 +71,11 @@ body {
     color: #a9b0bd;
 }
 
-/* Efecto de Cierre: Comillas de cierre (");) */
 .closure {
     position: relative;
     line-height: 1.2;
 }
 
-/* Máscaras (se mantienen para evitar romper el código, pero el overflow: hidden en .string es el que realmente funciona) */
 .closure::after {
     content: "";
     position: absolute;
@@ -108,37 +91,101 @@ body {
     height: 2em;
     width: 12em;
     background: #282c34;
-    transform: translate(-12em, 1em);
+    transform: translate(-12em, 1.2em);
 }
 
-/* ANIMACIONES (MODIFICADO PARA 2 LÍNEAS) */
-
 @keyframes move {
-    /* El movimiento es para 2 líneas, 8s de duración total (4s por línea) */
-
-    /* 0% - 45% = Línea 1 visible */
     0%,
     45% {
         transform: translatey(0);
-    } 
+    }
 
-    /* 50% - 95% = Línea 2 visible */
     50%,
     95% {
-        transform: translatey(calc(-1.2em * 1)); /* Sube 1 posición */
-    } 
+        transform: translatey(calc(-1.2em * 1));
+    }
 
-    /* 100% = Vuelve a la Línea 1 instantáneamente */
     100% {
         transform: translatey(0);
     }
 }
 
-/* ==================================== */
-/* 3. Media Queries (Ajustes de Responsividad) */
-/* ==================================== */
 @media (max-width: 768px) {
     .code-animation-container {
-        font-size: 21px; /* Reducir tamaño en móviles */
+        font-size: 21px;
     }
+}
+
+ .fixed-social {
+    /* Posición fija en la esquina inferior izquierda */
+    position: fixed;
+    bottom: 0;
+    left: 40px; /* Separación de 40px del borde izquierdo */
+    z-index: 1000;
+
+    /* Línea vertical decorativa */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fixed-social::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 90px; /* Altura de la línea */
+    margin: 0 auto;
+    background-color: #a9b0bd; /* Color gris claro */
+}
+
+.social-icon-link {
+    display: block;
+    padding: 8px 0; /* Espacio entre iconos */
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon-link:hover {
+    transform: translateY(-3px); /* Efecto hover sutil */
+}
+
+.social-icon {
+    width: 20px; /* Tamaño del icono */
+    height: 20px;
+    filter: invert(70%) sepia(20%) saturate(600%) hue-rotate(10deg); /* Color similar al #e4bb68 o #a9b0bd */
+}
+
+.fixed-email {
+    /* Posición fija en la esquina inferior derecha */
+    position: fixed;
+    bottom: 0;
+    right: 40px; /* Separación de 40px del borde derecho */
+    z-index: 1000;
+
+    /* Contenedor del texto y la línea */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fixed-email a {
+    /* Estilo del texto del correo */
+    text-decoration: none;
+    color: #a9b0bd;
+    font-size: 0.9em;
+    padding: 15px 0;
+    writing-mode: vertical-rl; /* Gira el texto 90 grados */
+    transition: color 0.3s ease-in-out;
+}
+
+.fixed-email a:hover {
+    color: #61afef; /* Color de código azul al pasar el ratón */
+}
+
+.fixed-email::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 90px; /* Altura de la línea */
+    margin: 0 auto;
+    background-color: #a9b0bd;
 }
