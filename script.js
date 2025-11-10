@@ -1,40 +1,68 @@
 
 const proyectos = [
     {
-        titulo: "Sistema Médico SQLapio",
-        descripcion: "Mejora y desarrollo de la interfaz de módulos para el sistema médico, incluyendo la implementación de funcionalidades y optimización de gráficas con Chartsjs.",
-        tecnologias: ["HTML", "CSS", "Javascript (ES6)", "Bootstrap", "Laravel", "ChartJs"],
-        linkDemo: "#", 
-        linkRepo: "#" 
-    },
-    {
-        titulo: "Sistema Administrativo Piedy",
-        descripcion: "Desarrollo del Landing Page y mejora de la interfaz de módulos del sistema de facturación y administrativo, utilizando Filament para una UI/UX robusta.",
-        tecnologias: ["HTML", "CSS", "Javascript", "Bootstrap", "Filament", "Chartsjs"],
-        linkDemo: "#", 
-        linkRepo: "#" 
-    },
-    {
-        titulo: "Mejora de la Experiencia en Senado de México",
+        titulo: "Genesis Skin & Beauty",
         descripcion: "Optimización de la experiencia general y el rendimiento (performance) de la página administrativa del Senado de México en un 20%.",
         tecnologias: ["ReactJs", "Javascript (ES6)", "HTML5", "SASS", "Bootstrap"],
-        linkDemo: "#", 
+        linkDemo: "https://karanguren.github.io/genesisSkinBeauty-page/", 
         linkRepo: "#" 
     },
     {
-        titulo: "Plataforma de Gestión de Datos Goodgrowth",
-        descripcion: "Desarrollo de la interfaz de nuevos módulos para la gestión de datos empresariales, incluyendo la integración de la librería Apexcharts para visualizaciones avanzadas.",
-        tecnologias: ["ReactJs", "Javascript", "MaterialUI", "Apexcharts", "APIS Rest"],
-        linkDemo: "#", 
+        titulo: "Piedy",
+        descripcion: "Desarrollo del Landing Page de Piedy.com y mejora de la interfaz de módulos del sistema de facturación y administrativo, utilizando Filament para una UI/UX robusta y ChartJs para gráficas.",
+        tecnologias: ["HTML", "CSS", "Javascript", "Bootstrap", "Filament", "Chartsjs", "Laravel"],
+        linkDemo: "https://www.piedy.com", 
         linkRepo: "#" 
     },
     {
-        titulo: "Página de Administración de Token ALBT",
-        descripcion: "Desarrollo de la interfaz de administración para el token ALBT, implementando patrones de diseño creados propios de la empresa basados en MaterialUI.",
-        tecnologias: ["ReactJs", "Javascript", "MaterialUI", "HTML5", "SASS"],
-        linkDemo: "#", 
+        titulo: "Inversiones TRX",
+        descripcion: "Actualización y modernización del Landing Page de inversionestrx.com.",
+        tecnologias: ["HTML", "CSS", "Javascript", "Bootstrap", "Flickity"],
+        linkDemo: "https://karanguren.github.io/trxWeb/", 
         linkRepo: "#" 
-    }
+    },
+    {
+        titulo: "TadMass",
+        descripcion: "Desarrollo del Landing Page de tadmedi.com y mejora de la interfaz de módulos para el sistema administrativo.",
+        tecnologias: ["HTML", "CSS", "Javascript (ES6)", "Bootstrap", "Laravel", "Filament"],
+        linkDemo: "https://karanguren.github.io/tadmassWeb/", 
+        linkRepo: "#" 
+    },
+    {
+        titulo: "VRparaglider",
+        descripcion: "Desarrollo de la interfaz de nuevos módulos para la gestión de datos empresariales. Integración de la librería Apexcharts para visualizaciones avanzadas.",
+        tecnologias: ["ReactJs", "Javascript", "MaterialUI", "Apexcharts", "API Rest"],
+        linkDemo: "https://karanguren.github.io/vrparaglider/", 
+        linkRepo: "#" 
+    },
+    {
+        titulo: "SQLapio.com V1",
+        descripcion: "Desarrollo del Landing Page de Sqlapio.com y mejora de la interfaz de módulos para el sistema médico. Implementación de funcionalidades, optimización de gráficas con Chartsjs e integración de servicios API Rest.",
+        tecnologias: ["HTML", "CSS", "Javascript (ES6)", "Bootstrap", "Laravel", "ChartJs", "API Rest"],
+        linkDemo: "https://karanguren.github.io/sqlapioMedWebV1/home.html", 
+        linkRepo: "#" 
+    },
+    {
+        titulo: "SQLapio.com V2",
+        descripcion: "Desarrollo del Landing Page de Sqlapio.com y mejora de la interfaz de módulos para el sistema médico. Implementación de funcionalidades, optimización de gráficas con Chartsjs e integración de servicios API Rest.",
+        tecnologias: ["HTML", "CSS", "Javascript (ES6)", "Bootstrap", "Laravel", "ChartJs", "API Rest"],
+        linkDemo: "https://karanguren.github.io/sqlapioMedWebV2/", 
+        linkRepo: "#" 
+    },
+    {
+        titulo: "SQLapio Technology",
+        descripcion: "Desarrollo del Landing Page de sqlapiotech.com.",
+        tecnologias: ["HTML", "CSS", "Javascript", "Bootstrap"],
+        linkDemo: "https://karanguren.github.io/sqlapioTechnologyWeb/", 
+        linkRepo: "#" 
+    },
+    // {
+    //     titulo: "Página de Administración de Token ALBT",
+    //     descripcion: "Desarrollo de la interfaz de administración para el token ALBT, implementando patrones de diseño propios basados en MaterialUI.",
+    //     tecnologias: ["ReactJs", "Javascript", "MaterialUI", "HTML5", "SASS"],
+    //     linkDemo: "#", 
+    //     linkRepo: "#" 
+    // }
 ];
 
 function renderizarProyectos() {
@@ -48,13 +76,11 @@ function renderizarProyectos() {
             <div class="card h-100 shadow-sm border-0">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title text-primary fw-bold">${proyecto.titulo}</h5>
-                    <p class="card-text">${proyecto.descripcion}</p>
                     <p class="text-muted small mt-auto pt-2">
                         **Tecnologías:** ${proyecto.tecnologias.join(', ')}
                     </p>
                     <div class="mt-3">
                         <a href="${proyecto.linkDemo}" target="_blank" class="btn btn-primary btn-sm me-2">Ver Demo</a>
-                        <a href="${proyecto.linkRepo}" target="_blank" class="btn btn-outline-secondary btn-sm">Código</a>
                     </div>
                 </div>
             </div>

@@ -65,6 +65,15 @@ body {
 
 
 @media (max-width: 768px) {
+
+    .text {
+        font-size: 6vmin !important;
+    }
+
+    .maquina-escribir {
+            font-size: 25px !important;
+            text-align: center !important;
+    }
     
 }
 
