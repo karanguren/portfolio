@@ -42,13 +42,13 @@ const proyectos = [
         linkDemo: "https://karanguren.github.io/sqlapioMedWebV1/home.html", 
         linkRepo: "#" 
     },
-    {
-        titulo: "SQLapio.com V2",
-        descripcion: "Desarrollo del Landing Page de Sqlapio.com y mejora de la interfaz de módulos para el sistema médico. Implementación de funcionalidades, optimización de gráficas con Chartsjs e integración de servicios API Rest.",
-        tecnologias: ["HTML", "CSS", "Javascript (ES6)", "Bootstrap", "Laravel", "ChartJs", "API Rest"],
-        linkDemo: "https://karanguren.github.io/sqlapioMedWebV2/", 
-        linkRepo: "#" 
-    },
+    // {
+    //     titulo: "SQLapio.com V2",
+    //     descripcion: "Desarrollo del Landing Page de Sqlapio.com y mejora de la interfaz de módulos para el sistema médico. Implementación de funcionalidades, optimización de gráficas con Chartsjs e integración de servicios API Rest.",
+    //     tecnologias: ["HTML", "CSS", "Javascript (ES6)", "Bootstrap", "Laravel", "ChartJs", "API Rest"],
+    //     linkDemo: "https://karanguren.github.io/sqlapioMedWebV2/", 
+    //     linkRepo: "#" 
+    // },
     {
         titulo: "SQLapio Technology",
         descripcion: "Desarrollo del Landing Page de sqlapiotech.com.",
